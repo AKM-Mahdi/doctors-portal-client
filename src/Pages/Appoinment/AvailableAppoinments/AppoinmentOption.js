@@ -1,6 +1,6 @@
 import React from "react";
 
-const AppoinmentOption = ({ appoinmentOption }) => {
+const AppoinmentOption = ({ appoinmentOption, setTreatmentInfo }) => {
   const { name, slots } = appoinmentOption;
   return (
     <div className="card shadow-sm border-2">
@@ -13,9 +13,14 @@ const AppoinmentOption = ({ appoinmentOption }) => {
             {slots.length} {slots.length > 1 ? "spaces" : "space"} are available
           </span>
         </p>
-        <button className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white border-none rounded-md">
+
+        <label
+          htmlFor="my-modal-3"
+          onClick={() => setTreatmentInfo(appoinmentOption)}
+          className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white border-none rounded-md"
+        >
           Book Appoinments
-        </button>
+        </label>
       </div>
     </div>
   );
