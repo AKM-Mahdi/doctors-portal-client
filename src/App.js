@@ -4,7 +4,7 @@ import routes from "./Routes/SimpleRoutes";
 
 function App() {
   return (
-    <div className="max-w-[1440px] mx-auto">
+    <div className="">
       <RouterProvider router={routes}></RouterProvider>
     </div>
   );
