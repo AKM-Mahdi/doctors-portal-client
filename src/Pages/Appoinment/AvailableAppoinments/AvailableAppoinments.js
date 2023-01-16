@@ -18,7 +18,7 @@ const AvailableAppoinments = ({ selectedDate }) => {
         Available Appoinments in: {format(selectedDate, "PP")}
       </p>
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-col-2 gap-5 lg:gap-10">
-        {appoinmentOptions.map((appoinmentOption) => (
+        {appoinmentOptions.map((appoinmentOption, index) => (
           <AppoinmentOption
             key={appoinmentOption._id}
             appoinmentOption={appoinmentOption}
@@ -27,7 +27,11 @@ const AvailableAppoinments = ({ selectedDate }) => {
         ))}
       </div>
       {treatmentInfo && (
-        <BookingModal treatmentInfo={treatmentInfo}> </BookingModal>
+        <BookingModal
+          treatmentInfo={treatmentInfo}
+          setTreatmentInfo={setTreatmentInfo}
+          selectedDate={selectedDate}
+        ></BookingModal>
       )}
     </div>
   );

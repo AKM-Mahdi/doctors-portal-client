@@ -15,7 +15,8 @@ const AppoinmentOption = ({ appoinmentOption, setTreatmentInfo }) => {
         </p>
 
         <label
-          htmlFor="my-modal-3"
+          disabled={slots.length === 0}
+          htmlFor="bookingModal"
           onClick={() => setTreatmentInfo(appoinmentOption)}
           className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white border-none rounded-md"
         >
